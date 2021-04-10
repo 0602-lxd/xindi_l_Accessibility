@@ -1,0 +1,462 @@
+(() => {
+  console.log("working");
+        // video1 
+  const video1 = document.querySelector('.play1 video'),
+        video1TimeBar     = document.querySelector('#vedioTimeBar1'),/* video1 TimeBar */
+        play1btn          = document.querySelector('.play1controls .playbtn'),/* video1 Play pause button */
+        vedio1VolumeBar   = document.querySelector('#vediomute1'),/* video1 volume */
+        vedioimg1         = document.querySelector('.vedioimg1'),/* video1 pics */
+        play1controlsmute = document.querySelector('.play1controls .mute'),/* video1 Mute and unmute */
+        // video2
+        video2            = document.querySelector('.play2 video'),
+        video2TimeBar     = document.querySelector('#vedioTimeBar2'),/* video2 TimeBar */
+        play2btn          = document.querySelector('.play2controls .playbtn'),/* video2 Play pause button */
+        vedio2VolumeBar   = document.querySelector('#vediomute2'),/* video2 volume */
+        vedioimg2         = document.querySelector('.vedioimg2'),/* video2 pics */
+        play2controlsmute = document.querySelector('.play2controls .mute'),/* video2 Mute and unmute */
+        // audio
+        audio            = document.querySelector('#audio'),
+        audioTimeBar     = document.querySelector('#audioTimeBar'),/* audio TimeBar */
+        audioVolumeBar   = document.querySelector('#audioVolumeBar'),/* audio volume */
+        audioMute        = document.querySelector('#audioMute'),/* audio Mute and unmute */
+        audioPlayPause   = document.querySelector('#audioPlayPause'),/* audio Play pause button */
+        play1mute        = document.querySelector('.play1 .mute'),
+        play2mute        = document.querySelector('.play2 .mute'),
+        topbtnA          = document.querySelectorAll('.topbtn a'),
+        convedioPlay1    = document.querySelector('.convedio.play1'),
+        play1screen      = document.querySelector('.play1controls .screen'),
+        play2screen      = document.querySelector('.play2controls .screen'),
+        play1Qj          = document.querySelector('.play1controls .qj'),
+        play1Ht          = document.querySelector('.play1controls .ht'),
+        play2            = document.querySelector('.play2')
+        play2Qj          = document.querySelector('.play2controls .qj'),
+        play2Ht          = document.querySelector('.play2controls .ht'),
+        lyrics_button    = document.querySelector('.lyrics-button'),
+        lyrics           = document.querySelector('.lyrics'),
+        audioCurrentTime = document.querySelector('#audioCurrentTime'),
+        audioDuration    = document.querySelector('#audioDuration');
+
+
+        function loadVideo1() {
+            video1.load();/* Preload video 1 */
+            video2.load();/* Preload video 2 */
+        }
+
+        function loadAudio() {      
+           audio.load();
+        }
+
+        function vedio1run() {
+            video1.addEventListener('loadedmetadata', function () {
+                video1TimeBar.value = 0;
+            });
+            video1TimeBar.addEventListener("change", timeTrackervideo1);
+            video1TimeBar.addEventListener("mouseup", playPausevideo1);
+        }
+
+        function vedio2run() {
+            video2.addEventListener('loadedmetadata', function () {
+                video2TimeBar.value = 0;
+            });
+//            video2TimeBar.addEventListener("change", timeTrackervideo2);
+            video2TimeBar.addEventListener("mouseup", playPausevideo2);
+        }
+
+        /* Control audio pause and play */
+        function audioplay() {
+            var data = audio;
+            data.play();
+        }
+        function audiostop() {
+            var data = audio;
+            data.pause();
+        }
+
+        function audiorun() {
+
+            audio.addEventListener('timeupdate', function () {
+                // Set to minute and seconds
+                var time = audio.currentTime;
+                var seconds = time.toFixed(2);
+                var cleartime = formatTime(seconds);
+                console.log(cleartime);
+                // Set the current play value
+                audioCurrentTime.innerHTML = cleartime;
+            });
+            audio.addEventListener('loadedmetadata', function () {
+                // Set to minute and seconds
+                var duration = audio.duration;
+                var seconds = duration.toFixed(2);
+                var cleanDuration = formatTime(seconds);
+                var durationTime = audioDuration;
+                // Set the audio duration
+                durationTime.innerHTML = cleanDuration;
+                // set the timebar to 0
+                audioTimeBar.value = 0;
+            });
+            
+            audioTimeBar.addEventListener("change", timeTrackerAudio);
+            audioTimeBar.addEventListener("mousedown", audioPause);
+            audioTimeBar.addEventListener("mouseup", playPauseAudio);
+
+        }
+
+
+        /* Modify audio volume */
+        function volumeChangeAudio() {
+            audioMute.volume = audioVolumeBar.value; 
+            document.querySelector('#audioVolumeBar').value = audioVolumeBar.value; //change volume
+            /* Modify the icon mute state */
+            if (audioVolumeBar.value != 0) {
+                audioMute.classList.value = 'mute open';
+                audio.muted = false;
+            } else {
+                audioMute.classList.value = 'mute close';
+                audio.muted = true;
+            }
+            // Update video volume
+        }
+     
+        function ModifyVideovolume1() {
+            vedio1VolumeBar.volume = audioVolumeBar.value; 
+            /* Modify the icon mute state */
+            if (vedio1VolumeBar.value != 0) {
+                play1mute.classList.value = 'mute open';
+                video1.muted = false;
+            } else {
+                play1mute.classList.value = 'mute close';
+                video1.muted = true;
+            }
+        }
+       
+        function ModifyVideovolume2() {
+            vedio2VolumeBar.volume = audioVolumeBar.value; 
+       
+            if (vedio2VolumeBar.value != 0) {
+                play2mute.classList.value = 'mute open';
+                video2.muted = false;
+            } else {
+                play2mute.classList.value = 'mute close';
+                video2.muted = true;
+            }
+        }
+      
+        function UpdatVideotime1() {
+            
+            var totalValue = (100 / video1.duration) * video1.currentTime; // Calculate the slider value
+            video1TimeBar.value = totalValue; // Update the slider value
+        }
+
+        function timeTrackervideo1() {
+            var totalTime = video1.duration * (video1TimeBar.value / 100); // Calculate the new time
+            video1.currentTime = totalTime; // Update the video time
+    
+            video1.play();
+            play1btn.classList.value = 'playbtn pause';
+
+        }
+
+        function Updatvideotime2() {
+            var totalTime = video2.duration * (video2TimeBar.value / 100); // Calculate the new time
+//            video2.currentTime = totalTime; // Update the video time
+        
+            video2.play();
+            play2btn.classList.value = 'playbtn pause';
+		}
+
+
+
+        function timeUpdatervideo2() {
+            var totalValue = (100 / video2.duration) * video2.currentTime; // Calculate the slider value
+            video2TimeBar.value = totalValue; // Update the slider value
+        }
+   
+        function timeUpdaterAudio() {
+            var totalValue = (100 / audio.duration) * audio.currentTime; // Calculate the slider value
+            audioTimeBar.value = totalValue; // Update the slider value
+        }
+
+        function timeTrackerAudio() {
+            var totalTime = audio.duration * (audioTimeBar.value / 100); // Calculate the new time
+            audio.currentTime = totalTime; // Update the video time
+     
+            audio.play();
+        }
+       
+        function audioPause() {
+            audioPlayPause.classList.value = 'playbtn pause';
+            audio.pause();
+        }
+
+        function video1Pause() {
+            play1btn.classList.value = 'playbtn pause';
+            video1.pause();
+        }
+      
+        function playPausevideo1() {
+            var type = play1btn.classList.value;
+            if (type == 'playbtn play') {
+                play1btn.classList.value = 'playbtn pause';
+                video1.play();
+            } else {
+                play1btn.classList.value = 'playbtn play';
+                video1.pause();
+            }
+            console.log(type);
+        }
+       
+        function video2Pause() {
+            play2btn.classList.value = 'playbtn pause';
+            video2.pause();
+        }
+       
+        function playPausevideo2() {
+            var type = play2btn.classList.value;
+            if (type == 'playbtn play') {
+                play2btn.classList.value = 'playbtn pause';
+                video2.play();
+            } else {
+                play2btn.classList.value = 'playbtn play';
+                document.querySelector('.play2 video').pause();
+            }
+            console.log(type);
+        }
+
+       
+        function playPauseAudio() {
+            var type = audioPlayPause.classList.value;
+            if (type == 'playbtn play') {
+                this.classList.value = 'playbtn pause';
+                audio.play();
+            } else {
+                this.classList.value = 'playbtn play';
+                audio.pause();
+            }
+        }
+
+     
+   
+        audioMute.addEventListener('click', function () {
+            var type = this.classList.value;
+            if (type == 'mute close') {
+                this.classList.value = 'mute open';
+                audioVolumeBar.value = 1; // Change the volume bar
+                audio.muted = false;
+            } else {
+                this.classList.value = 'mute close';
+                audioVolumeBar.value = 0; // Change the volume bar
+                audio.muted = true;
+            }
+        });
+
+  
+        audioPlayPause.addEventListener('click', function () {
+            var type = this.classList.value;
+            if (type == 'fl playbtn play') {
+                this.classList.value = 'playbtn pause';
+                audio.play()
+            } else {
+                this.classList.value = 'playbtn play';
+                audio.pause();
+            }
+        });
+
+        
+        vedioimg2.addEventListener('click', function () {
+     
+            this.style.display = 'none';
+        
+            play2.style.display = 'block'
+           
+            video2.play();
+         
+            audiostop();
+            if (video1) {
+                video1.pause();
+                play1btn.classList = 'playbtn play';
+            }
+           
+            play2btn.classList = 'playbtn pause';
+        });
+
+      
+        play2btn.addEventListener('click', function () {
+            playPausevideo2();
+        });
+
+    
+        play2Qj.onclick = function () {
+            var totalTime = video2.duration / 20; // Calculate the new time
+            video2.currentTime += totalTime; // Update the video time
+        }
+    
+        play2Ht.onclick = function () {
+            var totalTime = video2.duration / 20; // Calculate the new time
+            video2.currentTime -= totalTime; // Update the video time
+        }
+     
+        lyrics_button.addEventListener('click', function () {
+            var txt = lyrics_button.innerHTML;
+            console.log(txt)
+            if (txt == 'Hide lyrics') {
+                lyrics_button.innerHTML = 'Show lyrics';
+                lyrics.classList = 'lyrics hidden';
+
+            } else {
+                lyrics_button.innerHTML = 'Hide lyrics';
+                lyrics.classList = 'lyrics ';
+            }
+        });
+
+
+      
+        vedioimg1.addEventListener('click', function () {
+   
+            this.style.display = 'none';
+       
+            video1.play();
+            convedioPlay1.style.display = 'block';
+         
+            audiostop();
+            if (video2) {
+                video2.pause();
+                play2btn.classList = 'playbtn play';
+            }
+         
+            play1btn.classList = 'playbtn pause';
+
+        });
+       
+        play1btn.addEventListener('click', function () {
+            var type = play1btn.classList.value;
+            if (type == 'playbtn play') {
+                play1btn.classList.value = 'playbtn pause';
+                video1.play();
+            } else {
+                play1btn.classList.value = 'playbtn play';
+                video1.pause();
+            }
+            console.log(type);
+        });
+    
+        play1controlsmute.addEventListener('click', function () {
+            var type = play1controlsmute.classList.value;
+            if (type == 'mute close') {
+                play1controlsmute.classList.value = 'mute open';
+                video1.muted = false;
+                vedio1VolumeBar.value = 1;
+            } else {
+                play1controlsmute.classList.value = 'mute close';
+                video1.muted = true;
+                vedio1VolumeBar.value = 0;
+            }
+        });
+     
+        play1screen.addEventListener('click', function () {
+            var video = video1;
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen(); // Fallback for Firefox
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen(); // Fallback for Chrome and Safari
+            }
+        });
+   
+        play1Qj.onclick = function () {
+            var totalTime = video1.duration / 20; // Calculate the new time
+            video1.currentTime += totalTime; // Update the video time
+        }
+ 
+        play1Ht.onclick = function () {
+            var totalTime = video1.duration / 20; // Calculate the new time
+            video1.currentTime -= totalTime; // Update the video time
+        }
+       
+        vedioimg2.addEventListener('click', function () {
+         
+            this.style.display = 'none';
+           
+            play2.style.display = 'block'
+           
+            video2.play();
+          
+            audiostop();
+            if (video1) {
+                video1.pause();
+                play1btn.classList = 'playbtn play';
+            }
+          
+            play2btn.classList = 'playbtn pause';
+        });
+        
+
+      
+        play2controlsmute.addEventListener('click', function () {
+            var type = play2controlsmute.classList.value;
+            if (type == 'mute close') {
+                play2controlsmute.classList.value = 'mute open';
+                video2.muted = false;
+                vedio2VolumeBar.volume = 1;
+            } else {
+                play2controlsmute.classList.value = 'mute close';
+                video2.muted = true;
+                vedio2VolumeBar.volume = 0;
+            }
+        });
+
+    
+        play2screen.addEventListener('click', function () {
+            var video = video2;
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen(); // Fallback for Firefox
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen(); // Fallback for Chrome and Safari
+            }
+        });
+
+
+      
+        play2Qj.onclick = function () {
+            var totalTime = video2.duration / 20; // Calculate the new time
+            video2.currentTime += totalTime; // Update the video time
+        }
+
+       
+        play2Ht.onclick = function () {
+            var totalTime = video2.duration / 20; // Calculate the new time
+            video2.currentTime -= totalTime; // Update the video time
+        }
+
+
+        topbtnA.forEach((ele, i) => {
+            ele.addEventListener('click', function () {
+                console.log(i);
+                if (i == 0) {
+                    document.querySelector('.vedio1').style.display = 'block';
+                    document.querySelector('.vedio2').style.display = 'none';
+                } else {
+                    document.querySelector('.vedio1').style.display = 'none';
+                    document.querySelector('.vedio2').style.display = 'block';
+                }
+            });
+        });
+      
+        video1.addEventListener("timeupdate", UpdatVideotime1);
+        video2.addEventListener("timeupdate", Updatvideotime2);
+    
+        vedio1VolumeBar.addEventListener("change", ModifyVideovolume1);
+        vedio2VolumeBar.addEventListener("change", ModifyVideovolume2);
+
+        audioVolumeBar.addEventListener("change", volumeChangeAudio);
+        audio.addEventListener("timeupdate", timeUpdaterAudio);
+
+        window.addEventListener("load", loadVideo1);
+        window.addEventListener("load", vedio1run);
+        window.addEventListener("load", vedio2run);
+        window.addEventListener("load", audiorun);
+
+
+})();
