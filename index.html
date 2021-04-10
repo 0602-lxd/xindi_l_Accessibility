@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Roku FlashBack</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+ 
+  <main id="app">
+    <header class="header">
+      <a class="roku-logo"><img src="images/roku.svg" alt="ROKU Logo"></a>
+      <h1>Accessibility for Media</h1>
+      <h3>Please choose your favorite movie or TV series, you can watch it directly online</h3>
+
+    </header>
+    <section class="mediaquery">
+      <section class="topbtn  fn-clear">
+        <a href="javascript:;"   id="videoFst"><img src="./images/TV.png" alt="switch TV button"></a>
+		    <a href="javascript:;"  id="videoSed"><img src="./images/movie.png" alt="switch movie button"> </a>
+      </section> 
+    </section>
+    
+    <section class="vediobox">
+      <section class="vedio1">
+        <section class="video convedio play1">
+          <video tabindex="0" controlsList="nodownload"   preload="none"  playsinline="true"  disablePictureInPicture src="./video/Gravity.mp4"  poster="./images/gravity_cover.jpg">
+				<track kind="subtitles" src="./captions/Gravity.vtt"  default>
+		  </video>
+        
+          <section class="play1controls">
+            <section class="ring">
+              <input class="fl" type="range" id="vedioTimeBar1" value="0"  min="0"  step="1"  id="videoTimeBar">
+            </section>
+
+            <section class="fn-clear">
+              <a href="javascript:;" class="playbtn play"  id="playVideo"></a>
+              <a href="javascript:;" class="ht"  id="back">
+                <img src="./images/houtui.png" alt="backward button">
+              </a>
+              <a href="javascript:;" class="qj"  id="goto">
+                <img src="./images/kuaijin.png" alt="reward button">
+              </a>
+              <a href="javascript:;" class="mute open"   id="muteVideo"></a>
+              <a href="javascript:;" class="subTitle "   id="subTitle"></a>
+              <a href="javascript:;" class="screen"  id="fullScreen"></a>
+              <input class="fl" type="range" id="vediomute1" value="0" min="0" max="1" step="0.1">
+            </section>
+          </section>
+        </section>
+
+        <section class="video-img vedioimg1"  id="playScreen">
+          <svg role="presentation" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"
+            preserveAspectRatio="xMidYMin slice" width="100%">
+            <g fill="none" fill-rule="evenodd">
+              <circle cx="18" cy="18" r="17" stroke="#fff" stroke-width="2"></circle>
+              <path fill="#fff" d="M23.935 17.708l-10.313 6.033V11.676z"></path>
+            </g>
+          </svg>
+        </section>
+      </section>
+    </section>
+    <div class="audiobox">
+      <p class="tit">Recommended Music:</p>
+      <img class="png" src="./images/music.jpg" alt="music cover pic">
+      <section class="mainaudio">
+        <audio id="audio" controls controlsList="nodownload" style="display: none;"
+          src="./audio/'City of Stars' (Duet ft. Ryan Gosling, Emma Stone) - La La Land Original Motion Picture Soundtr.mp3">
+        </audio>
+      </section>
+      <section id="audioControls" class="fn-clear">
+        <!-- <h3 class="hidden">Video Controls</h3> -->
+        <a href="javascript:;" id="audioPlayPause" class="fl playbtn play"></a>
+        <section id="audioTime" class="fl"><span id="audioCurrentTime"></span>/<span id="audioDuration">03:05</span></section>
+        <input class="fl" type="range" id="audioTimeBar" value="0">
+        <!-- <button id="audioPlayPause">
+          <img src="images/ctrl_play.svg" alt="Play/Pause Button">
+        </button> -->
+        <a href="javascript:;" class="mute open" id="audioMute"></a>
+        <input type="range" id="audioVolumeBar" min="0" max="1" step="0.1" value="0">
+      </section>
+      
+      <a href="javascript:;" class="lyrics-button">Hide lyrics</a>
+      
+      <section class="lyrics">
+        <h3 class="hidden">"City Of Stars"</h3>
+
+        <p>(performed by Ryan Gosling & Emma Stone)<br>
+          (from "La La Land" soundtrack)<br>
+        </p>
+
+        <p>[Sebastian:]<br>
+          City of stars<br>
+          Are you shining just for me?<br>
+          City of stars<br>
+          There's so much that I can't see<br>
+          Who knows?<br>
+          I felt it from the first embrace I shared with you<br>
+        </p>
+
+        <p>[Mia:]<br>
+          That now our dreams may finally come true<br>
+        </p>
+
+        <p>City of stars<br>
+          Just one thing everybody wants<br>
+          There in the bars<br>
+          And through the smokescreen of the crowded restaurants<br>
+          It's love<br>
+          Yes, all we're looking for is love from someone else<br>
+        </p>
+
+        <p>[Sebastian:]<br>
+          A rush<br>
+        </p>
+        <p>[Mia:]<br>
+          A glance<br>
+        </p>
+        <p>[Sebastian:]<br>
+          A touch<br>
+        </p>
+        <p>[Mia:]<br>
+          A dance<br>
+        </p>
+
+        <p>[Both:]<br>
+          A look in somebody's eyes<br>
+          To light up the skies<br>
+          To open the world and send it reeling<br>
+          A voice that says, I'll be here<br>
+          And you'll be alright<br>
+        </p>
+
+        <p>
+          I don't care if I know<br>
+          Just where I will go<br>
+          'Cause all that I need's this crazy feeling<br>
+          A rat-tat-tat on my heart<br>
+        </p>
+
+        <p>[Sebastian:]<br>
+          Think I want it to stay<br>
+        </p>
+
+        <p>City of stars<br>
+          Are you shining just for me?<br>
+          City of stars<br>
+        </p>
+
+        <p>[Mia:]<br>
+          You never shined so brightly<br>
+        </p>
+
+        <p>
+          Source: LyricFind<br>
+          Songwriters: Justin Hurwitz / Benj Pasek / Justin Noble Paul<br>
+          City Of Stars lyrics © Warner Chappell Music, Inc, Universal Music Publishing Group<br>
+        </p>
+
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2020 Roku Flashback</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

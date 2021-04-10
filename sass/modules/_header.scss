@@ -1,0 +1,34 @@
+body{
+    background-color: #271138;
+}
+.header {
+    .roku-logo {
+        display: block;
+        max-width: 400px;
+        display: block;
+        margin: auto;
+        img {
+
+            display: block;
+            margin: auto;
+            width: 100%;
+        }
+    }
+    h1{
+        padding: 30px;
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+.fn-clear{
+    overflow: hidden;
+    .fl{
+        float: left;
+        
+    }
+    .fr{
+        float: right;
+    }
+}

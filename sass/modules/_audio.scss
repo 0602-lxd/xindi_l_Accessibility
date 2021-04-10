@@ -1,0 +1,72 @@
+.audiobox{
+    .tit{
+        padding: 0 30px;
+        font-size: 24px;
+        line-height: 40px;
+        padding: 30px;
+        color: #fff;
+        text-align: left;
+    }
+    #audio{
+        width: 400px;
+        display: block;
+        margin:auto;
+    }
+    .png{
+        width: 200px;
+        display: block;
+        margin: 30px auto;
+    }
+   
+    .mainaudio{
+        display: block;
+        margin: auto;
+        text-align: center;
+        padding: 60px 0;
+        #audio{
+            padding: 0 60px;
+            background-color: #f1f2f4;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            
+        }
+    }
+  
+    .lyrics-button{
+        width: 400px;
+        height: 60px;
+        background-color: #c183b1;
+        border-radius: 30px;
+        display: block;
+        margin: auto;
+        color: #fff;
+        line-height: 60px;
+        text-align: center;
+        text-decoration: none;
+
+    }
+    .lyrics.hidden{
+        display: none;
+    }
+    .lyrics{
+        display: block;        
+        h3{
+            padding: 30px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            font-size: 26px;
+            line-height: 40px;
+        }
+        p{
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 30px;
+            text-align: center;
+            display: block;
+            margin: 20px 0;
+            color: #fff;
+        }
+    }
+}
