@@ -1,0 +1,391 @@
+@import "./modules/_header.scss";
+@import "./modules/_audio.scss";
+@import "./modules/_footer.scss";
+@import "./modules/_mediaquery.scss";
+@import "./modules/_vars.scss";
+@import "./modules/_video.scss";
+
+
+$orange: #c183b1;
+$grey: #999;
+$black: #ccc;
+
+#audioControls {
+    max-width: 520px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: block;
+    margin: 30px auto;
+    background-color: #f1f2f4;
+    justify-content: space-around;
+    opacity: 1;
+    transition: all 0.3s ease;
+
+    .playbtn {
+        width: 30px;
+        height: 30px;
+        margin-left: 30px;
+        margin-top: 4px;
+        float: left;
+    }
+
+    .mute {
+        width: 30px;
+        height: 30px;
+        margin-left: 30px;
+        margin-top: 4px;
+        float: left;
+    }
+
+    .playbtn.play {
+        background: transparent url('./../images/bofang.png') no-repeat center scroll;
+        background-size: cover;
+    }
+
+    .playbtn.pause {
+        background: transparent url('./../images/timeout.png') no-repeat center scroll;
+        background-size: cover;
+    }
+
+    .mute.open {
+        background: transparent url('./../images/yinliang.png') no-repeat center scroll;
+        background-size: 24px;
+    }
+
+    .mute.close {
+        background: transparent url('./../images/jingyin.png') no-repeat center scroll;
+        background-size: 24px;
+    }
+
+    #audioPlayPause,
+    #audioMute {
+        img {
+            height: 3rem;
+        }
+    }
+
+    #audioTime {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        line-height: 30px;
+        padding: 0 30px;
+        margin-top: 4px;
+    }
+    #audioVolumeBar{
+        width: 80px;
+        margin-top: 10px;
+        vertical-align: middle;
+    }
+    #audioTimeBar {
+        outline: none;
+        -webkit-appearance: none;
+        width: 160px;
+        height: 2px;
+        margin: 20px 0 0 10px;
+        order: -1;
+
+        &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+            background: #999;
+            border-radius: 2.9px;
+        }
+
+        &::-webkit-slider-thumb {
+            border: 0px solid #000000;
+            height: 4px;
+            width: 4px;
+            border-radius: 3px;
+            background: #000;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: 0;
+        }
+
+        &:focus::-webkit-slider-runnable-track {
+            background: $grey;
+            border: none;
+        }
+
+        &::-moz-range-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            background: white;
+            border-radius: 2.9px;
+            border: none;
+        }
+
+        &::-moz-range-thumb {
+            border: none;
+            height: 2px;
+            width: 4px;
+            border-radius: 3px;
+            background: $orange;
+            cursor: pointer;
+        }
+
+        &::-ms-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+        }
+
+        &::-ms-fill-lower {
+            background: white;
+            border: none;
+            border-radius: 5.8px;
+        }
+
+        &::-ms-fill-upper {
+            background: white;
+            border: none;
+            border-radius: 5.8px;
+        }
+
+        &::-ms-thumb {
+            border: none;
+            height: 2px;
+            width: 4px;
+            border-radius: 3px;
+            background: $orange;
+            cursor: pointer;
+            height: 41.3px;
+        }
+
+        &:focus::-ms-fill-lower {
+            background: white;
+        }
+
+        &:focus::-ms-fill-upper {
+            background: white;
+        }
+
+    }
+}
+
+.play1controls,
+.play2controls {
+    background-color: #c183b1;
+    height: 90px;
+    position: relative;
+    margin-top: -60px;
+    >.fn-clear{
+        padding-top: 20px;
+        box-sizing: border-box;
+       height: 70px;
+        position: relative;
+    };
+    #vedioTimeBar1,#vedioTimeBar2 {
+        display: block;
+        -webkit-appearance: none;
+        width: 100%;
+        // margin-top: -80px;
+        margin-left: 0px;
+        order: -1;
+        &::-ms-fill-lower {
+            /*进度条已填充的部分*/
+            background: linear-gradient(to right, #059CFA, white 100%, white);
+        }
+        &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 41.3px;
+            cursor: pointer;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+            background: white;
+            border-radius: 2.9px;
+            // border: 0.6px solid #000101;
+        }
+
+        &::-webkit-slider-thumb {
+            box-shadow: 0.3px 0.3px 2.2px #000000, 0px 0px 0.3px #0d0d0d;
+            border: 0px solid #000000;
+            height: 44px;
+            width: 25px;
+            border-radius: 3px;
+            background: $orange;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -1.95px;
+        }
+
+        &:focus::-webkit-slider-runnable-track {
+            background: $grey;
+        }
+
+        &::-moz-range-track {
+            width: 100%;
+            height: 41.3px;
+            cursor: pointer;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+            background: white;
+            border-radius: 2.9px;
+            border: 0.6px solid #000101;
+        }
+
+        &::-moz-range-thumb {
+            box-shadow: 0.3px 0.3px 2.2px #000000, 0px 0px 0.3px #0d0d0d;
+            border: 0px solid #000000;
+            height: 44px;
+            width: 25px;
+            border-radius: 3px;
+            background: $orange;
+            cursor: pointer;
+        }
+
+        &::-ms-track {
+            width: 100%;
+            height: 41.3px;
+            cursor: pointer;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+        }
+
+        &::-ms-fill-lower {
+            background: white;
+            border: 0.6px solid #000101;
+            border-radius: 5.8px;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+        }
+
+        &::-ms-fill-upper {
+            background: white;
+            border: 0.6px solid #000101;
+            border-radius: 5.8px;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+        }
+
+        &::-ms-thumb {
+            box-shadow: 0.3px 0.3px 2.2px #000000, 0px 0px 0.3px #0d0d0d;
+            border: 0px solid #000000;
+            height: 44px;
+            width: 25px;
+            border-radius: 3px;
+            background: $orange;
+            cursor: pointer;
+            height: 41.3px;
+        }
+
+        &:focus::-ms-fill-lower {
+            background: white;
+        }
+
+        &:focus::-ms-fill-upper {
+            background: white;
+        }
+
+    }
+
+
+    .playbtn {
+        position: absolute;
+        left: 30px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+
+    }
+
+    .mute {
+        position: absolute;
+        right: 120px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+    }
+    #vediomute1{
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        width: 80px;
+        height: 30px;
+        display: inline-block;
+    }
+    #vediomute2{
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        width: 80px;
+        height: 30px;
+        display: inline-block;
+    }
+    .screen {
+        position: absolute;
+        right: 200px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+    }
+
+    .qj,
+    .ht {
+        img {
+            width: 30px;
+        }
+    }
+
+    .qj {
+        position: absolute;
+        left: 180px;
+        top: 15px;
+    }
+
+    .ht {
+        position: absolute;
+        left: 120px;
+        top: 15px;
+    }
+
+    .playbtn.play {
+        background: transparent url('./../images/play.png') no-repeat center scroll;
+        background-size: cover;
+    }
+
+    .playbtn.pause {
+        background: transparent url('./../images/stop.png') no-repeat center scroll;
+        background-size: cover;
+    }
+
+    .mute.open {
+        background: transparent url('./../images/open.png') no-repeat center scroll;
+        background-size: 24px;
+    }
+
+    .mute.close {
+        background: transparent url('./../images/close.png') no-repeat center scroll;
+        background-size: 24px;
+    }
+
+    .screen {
+        background: transparent url('./../images/screen.png') no-repeat center scroll;
+        background-size: 24px;
+    }
+}
+
+.transcript-btn {
+    background: $orange;
+    color: white;
+    padding: 1rem;
+    font-size: 1em;
+    margin: 1rem;
+}
+
+.transcript {
+    margin: 1rem;
+    line-height: 1.5em;
+
+    p {
+        margin-bottom: 1em;
+    }
+}

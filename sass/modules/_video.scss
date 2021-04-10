@@ -1,0 +1,139 @@
+.vediobox {
+    width: 847px;
+    height: 480px;
+    display: block;
+    margin: 30px auto;
+    position: relative;
+    .playbtn.play {
+        background: transparent url('./../images/bofang.png') no-repeat center scroll;
+        background-size: cover;
+    }
+
+    .playbtn.pause {
+        background: transparent url('./../images/timeout.png') no-repeat center scroll;
+        background-size: cover;
+    }
+
+    .mute.open {
+        background: transparent url('./../images/yinliang.png') no-repeat center scroll;
+        background-size: 24px;
+    }
+
+    .mute.close {
+        background: transparent url('./../images/jingyin.png') no-repeat center scroll;
+        background-size: 24px;
+    }
+    .vedioimg1.video-img {
+
+        background: transparent url(./../images/gravity.jpg) no-repeat top scroll;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+    }
+
+    .vedioimg2.video-img {
+        background: transparent url(./../images/guardians2.jpg) no-repeat top scroll;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+    }
+
+    .convedio {
+        width: 100%;
+        display: none;
+        height: 100%;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .vedio1 {
+        display: block;
+    }
+
+    .vedio2 {
+        display: none;
+    }
+
+ 
+    #progressWrap {
+        background-color: black;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    #playProgress {
+        background-color: red;
+        width: 0px;
+        height: 25px;
+        border-right: 2px solid blue;
+    }
+
+    #showProgress {
+        background-color: #ccc;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+}
+
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+
+
+video::-webkit-media-controls-mute-button {
+    display: none !important;
+}
+
+video::-internal-media-controls-overflow-button {
+    display: none !important;
+}
+
+
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button {
+  
+    display: none;
+}
+
+
+video::-webkit-media-controls-start-playback-button {
+ 
+    opacity: 0;
+}
+
+
+video::-webkit-media-controls {
+    display: none !important;
+}

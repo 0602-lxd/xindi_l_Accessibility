@@ -1,0 +1,20 @@
+.mediaquery {
+    max-width: 400px;
+    display: block;
+    margin: auto;
+
+    .topbtn {
+        a {
+            float: left;
+            img {
+                width: 180px;
+                margin: 0 10px;
+            }
+        }
+        a:hover{
+            opacity: 0.6;
+        }
+    }
+
+}
+

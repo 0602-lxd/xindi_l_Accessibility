@@ -1,0 +1,721 @@
+@charset "UTF-8";
+body {
+  background-color: #271138;
+}
+
+.header .roku-logo {
+  display: block;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+}
+
+.header .roku-logo img {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.header h1 {
+  padding: 30px;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.header h3 {
+    padding: 30px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.fn-clear {
+  overflow: hidden;
+  text-align: center;
+}
+
+.fn-clear .fl {
+  float: left;
+}
+
+.fn-clear .fr {
+  float: right;
+}
+
+
+.audiobox .tit {
+  padding: 0 30px;
+  font-size: 24px;
+  line-height: 40px;
+  padding: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.audiobox #audio {
+  width: 400px;
+  display: block;
+  margin: auto;
+}
+
+.audiobox .png {
+  width: 200px;
+  display: block;
+  margin: 30px auto;
+}
+
+.audiobox .mainaudio {
+  display: block;
+  margin: auto;
+  text-align: center;
+
+}
+
+.audiobox .mainaudio #audio {
+  padding: 0 60px;
+  background-color: #f1f2f4;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.audiobox .lyrics-button {
+  width: 400px;
+  height: 60px;
+  background-color: #c183b1;
+  border-radius: 30px;
+  display: block;
+  margin: auto;
+  color: #fff;
+  line-height: 60px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.audiobox .lyrics.hidden {
+  display: none;
+}
+
+.audiobox .lyrics {
+  display: block;
+}
+
+.audiobox .lyrics h3 {
+  padding: 30px 0;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 26px;
+  line-height: 40px;
+}
+
+.audiobox .lyrics p {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  display: block;
+  margin: 20px 0;
+  color: #fff;
+}
+
+footer {
+  background-color: #000;
+  margin: 30px auto 0 auto;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  line-height: 80px;
+  color: #fff;
+}
+
+.mediaquery {
+  max-width: 400px;
+  display: block;
+  margin: auto;
+}
+
+
+
+.mediaquery .topbtn a img {
+  width: 80px;
+  margin: 0 10px;
+}
+
+.mediaquery .topbtn a:hover {
+  opacity: 0.6;
+}
+
+.vediobox {
+  width: 847px;
+  height: 480px;
+  display: block;
+  margin: 30px auto;
+  position: relative;
+  /* 播放进度条 */
+}
+
+.vediobox .playbtn.play {
+  background: transparent url("./../images/bofang.png") no-repeat center scroll;
+  background-size: cover;
+}
+
+.vediobox .playbtn.pause {
+  background: transparent url("./../images/timeout.png") no-repeat center scroll;
+  background-size: cover;
+}
+
+.vediobox .mute.open {
+  background: transparent url("./../images/yinliang.png") no-repeat center scroll;
+  background-size: 24px;
+}
+
+.vediobox .mute.close {
+  background: transparent url("./../images/jingyin.png") no-repeat center scroll;
+  background-size: 24px;
+}
+
+.vediobox .vedioimg1.video-img {
+  background: transparent url(./../images/gravity.jpg) no-repeat top scroll;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.vediobox .vedioimg1.video-img svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.vediobox .vedioimg2.video-img {
+  background: transparent url(./../images/guardians2.jpg) no-repeat top scroll;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.vediobox .vedioimg2.video-img svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.vediobox .convedio {
+  width: 100%;
+  display: none;
+  height: 100%;
+}
+
+.vediobox video {
+  width: 100%;
+  height: 100%;
+}
+
+.vediobox .vedio1 {
+  display: block;
+}
+
+.vediobox .vedio2 {
+  display: none;
+}
+
+.vediobox #progressWrap {
+  background-color: black;
+  height: 25px;
+  cursor: pointer;
+}
+
+.vediobox #playProgress {
+  background-color: red;
+  width: 0px;
+  height: 25px;
+  border-right: 2px solid blue;
+}
+
+.vediobox #showProgress {
+  background-color: #ccc;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+
+video::-webkit-media-controls-mute-button {
+  display: none !important;
+}
+
+
+video::-internal-media-controls-overflow-button {
+  display: none !important;
+}
+
+
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button {
+  display: none;
+}
+
+
+video::-webkit-media-controls-start-playback-button {
+  opacity: 0;
+}
+
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+#audioControls {
+  max-width: 520px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+  margin: 30px auto;
+  background-color: #f1f2f4;
+  justify-content: space-around;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+#audioControls .playbtn {
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+  margin-top: 4px;
+  float: left;
+}
+
+#audioControls .mute {
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+  margin-top: 4px;
+  float: left;
+}
+
+#audioControls .playbtn.play {
+  background: transparent url("./../images/bofang.png") no-repeat center scroll;
+  background-size: cover;
+}
+
+#audioControls .playbtn.pause {
+  background: transparent url("./../images/timeout.png") no-repeat center scroll;
+  background-size: cover;
+}
+
+#audioControls .mute.open {
+  background: transparent url("./../images/yinliang.png") no-repeat center scroll;
+  background-size: 24px;
+}
+
+#audioControls .mute.close {
+  background: transparent url("./../images/jingyin.png") no-repeat center scroll;
+  background-size: 24px;
+}
+
+#audioControls #audioPlayPause img,
+#audioControls #audioMute img {
+  height: 3rem;
+}
+
+#audioControls #audioTime {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 30px;
+  padding: 0 30px;
+  margin-top: 4px;
+}
+
+#audioControls #audioVolumeBar {
+  width: 80px;
+  margin-top: 10px;
+  vertical-align: middle;
+}
+
+#audioControls #audioTimeBar {
+  outline: none;
+  -webkit-appearance: none;
+  width: 160px;
+  height: 2px;
+  margin: 20px 0 0 10px;
+  order: -1;
+}
+
+#audioControls #audioTimeBar::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px transparent, 0px 0px 0px rgba(13, 13, 13, 0);
+  background: #999;
+  border-radius: 2.9px;
+}
+
+#audioControls #audioTimeBar::-webkit-slider-thumb {
+  border: 0px solid #000000;
+  height: 4px;
+  width: 4px;
+  border-radius: 3px;
+  background: #000;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0;
+}
+
+#audioControls #audioTimeBar:focus::-webkit-slider-runnable-track {
+  background: #999;
+  border: none;
+}
+
+#audioControls #audioTimeBar::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: white;
+  border-radius: 2.9px;
+  border: none;
+}
+
+#audioControls #audioTimeBar::-moz-range-thumb {
+  border: none;
+  height: 2px;
+  width: 4px;
+  border-radius: 3px;
+  background: #c183b1;
+  cursor: pointer;
+}
+
+#audioControls #audioTimeBar::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#audioControls #audioTimeBar::-ms-fill-lower {
+  background: white;
+  border: none;
+  border-radius: 5.8px;
+}
+
+#audioControls #audioTimeBar::-ms-fill-upper {
+  background: white;
+  border: none;
+  border-radius: 5.8px;
+}
+
+#audioControls #audioTimeBar::-ms-thumb {
+  border: none;
+  height: 2px;
+  width: 4px;
+  border-radius: 3px;
+  background: #c183b1;
+  cursor: pointer;
+  height: 41.3px;
+}
+
+#audioControls #audioTimeBar:focus::-ms-fill-lower {
+  background: white;
+}
+
+#audioControls #audioTimeBar:focus::-ms-fill-upper {
+  background: white;
+}
+
+.play1controls,
+.play2controls {
+  background-color: #c183b1;
+  height: 90px;
+  position: relative;
+/*  margin-top: -60px;*/
+}
+
+.play1controls > .fn-clear,
+.play2controls > .fn-clear {
+  padding-top: 20px;
+  box-sizing: border-box;
+  height: 70px;
+  position: relative;
+}
+
+.play1controls #vedioTimeBar1, .play1controls #vedioTimeBar2,
+.play2controls #vedioTimeBar1,
+.play2controls #vedioTimeBar2 {
+  display: block;
+  -webkit-appearance: none;
+  width: 100%;
+  margin-left: 0px;
+  order: -1;
+  margin-top: -2px;
+}
+
+.play1controls #vedioTimeBar1::-ms-fill-lower, .play1controls #vedioTimeBar2::-ms-fill-lower,
+.play2controls #vedioTimeBar1::-ms-fill-lower,
+.play2controls #vedioTimeBar2::-ms-fill-lower {
+  
+  background: linear-gradient(to right, #059CFA, white 100%, white);
+}
+
+.play1controls #vedioTimeBar1::-webkit-slider-runnable-track, .play1controls #vedioTimeBar2::-webkit-slider-runnable-track,
+.play2controls #vedioTimeBar1::-webkit-slider-runnable-track,
+.play2controls #vedioTimeBar2::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 41.3px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px transparent, 0px 0px 0px rgba(13, 13, 13, 0);
+  background: white;
+  border-radius: 2.9px;
+}
+
+.play1controls #vedioTimeBar1::-webkit-slider-thumb, .play1controls #vedioTimeBar2::-webkit-slider-thumb,
+.play2controls #vedioTimeBar1::-webkit-slider-thumb,
+.play2controls #vedioTimeBar2::-webkit-slider-thumb {
+  box-shadow: 0.3px 0.3px 2.2px #000000, 0px 0px 0.3px #0d0d0d;
+  border: 0px solid #000000;
+  height: 44px;
+  width: 25px;
+  border-radius: 3px;
+  background: #c183b1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -1.95px;
+}
+
+.play1controls #vedioTimeBar1:focus::-webkit-slider-runnable-track, .play1controls #vedioTimeBar2:focus::-webkit-slider-runnable-track,
+.play2controls #vedioTimeBar1:focus::-webkit-slider-runnable-track,
+.play2controls #vedioTimeBar2:focus::-webkit-slider-runnable-track {
+  background: #999;
+}
+
+.play1controls #vedioTimeBar1::-moz-range-track, .play1controls #vedioTimeBar2::-moz-range-track,
+.play2controls #vedioTimeBar1::-moz-range-track,
+.play2controls #vedioTimeBar2::-moz-range-track {
+  width: 100%;
+  height: 41.3px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px transparent, 0px 0px 0px rgba(13, 13, 13, 0);
+  background: white;
+  border-radius: 2.9px;
+  border: 0.6px solid #000101;
+}
+
+.play1controls #vedioTimeBar1::-moz-range-thumb, .play1controls #vedioTimeBar2::-moz-range-thumb,
+.play2controls #vedioTimeBar1::-moz-range-thumb,
+.play2controls #vedioTimeBar2::-moz-range-thumb {
+  box-shadow: 0.3px 0.3px 2.2px #000000, 0px 0px 0.3px #0d0d0d;
+  border: 0px solid #000000;
+  height: 44px;
+  width: 25px;
+  border-radius: 3px;
+  background: #c183b1;
+  cursor: pointer;
+}
+
+.play1controls #vedioTimeBar1::-ms-track, .play1controls #vedioTimeBar2::-ms-track,
+.play2controls #vedioTimeBar1::-ms-track,
+.play2controls #vedioTimeBar2::-ms-track {
+  width: 100%;
+  height: 41.3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.play1controls #vedioTimeBar1::-ms-fill-lower, .play1controls #vedioTimeBar2::-ms-fill-lower,
+.play2controls #vedioTimeBar1::-ms-fill-lower,
+.play2controls #vedioTimeBar2::-ms-fill-lower {
+  background: white;
+  border: 0.6px solid #000101;
+  border-radius: 5.8px;
+  box-shadow: 0px 0px 0px transparent, 0px 0px 0px rgba(13, 13, 13, 0);
+}
+
+.play1controls #vedioTimeBar1::-ms-fill-upper, .play1controls #vedioTimeBar2::-ms-fill-upper,
+.play2controls #vedioTimeBar1::-ms-fill-upper,
+.play2controls #vedioTimeBar2::-ms-fill-upper {
+  background: white;
+  border: 0.6px solid #000101;
+  border-radius: 5.8px;
+  box-shadow: 0px 0px 0px transparent, 0px 0px 0px rgba(13, 13, 13, 0);
+}
+
+.play1controls #vedioTimeBar1::-ms-thumb, .play1controls #vedioTimeBar2::-ms-thumb,
+.play2controls #vedioTimeBar1::-ms-thumb,
+.play2controls #vedioTimeBar2::-ms-thumb {
+  box-shadow: 0.3px 0.3px 2.2px #000000, 0px 0px 0.3px #0d0d0d;
+  border: 0px solid #000000;
+  height: 44px;
+  width: 25px;
+  border-radius: 3px;
+  background: #c183b1;
+  cursor: pointer;
+  height: 41.3px;
+}
+
+.play1controls #vedioTimeBar1:focus::-ms-fill-lower, .play1controls #vedioTimeBar2:focus::-ms-fill-lower,
+.play2controls #vedioTimeBar1:focus::-ms-fill-lower,
+.play2controls #vedioTimeBar2:focus::-ms-fill-lower {
+  background: white;
+}
+
+.play1controls #vedioTimeBar1:focus::-ms-fill-upper, .play1controls #vedioTimeBar2:focus::-ms-fill-upper,
+.play2controls #vedioTimeBar1:focus::-ms-fill-upper,
+.play2controls #vedioTimeBar2:focus::-ms-fill-upper {
+  background: white;
+}
+
+.play1controls .playbtn,
+.play2controls .playbtn {
+  position: absolute;
+  left: 30px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.play1controls .mute,
+.play2controls .mute {
+  position: absolute;
+  right: 100px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.play1controls #vediomute1,
+.play2controls #vediomute1 {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 80px;
+  height: 30px;
+  display: inline-block;
+}
+
+.play1controls #vediomute2,
+.play2controls #vediomute2 {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 80px;
+  height: 30px;
+  display: inline-block;
+}
+
+.play1controls .screen,
+.play2controls .screen {
+  position: absolute;
+  right: 200px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.play1controls .qj img,
+.play1controls .ht img,
+.play2controls .qj img,
+.play2controls .ht img {
+  width: 30px;
+}
+
+.play1controls .qj,
+.play2controls .qj {
+  position: absolute;
+  left: 180px;
+  top: 15px;
+}
+
+.play1controls .ht,
+.play2controls .ht {
+  position: absolute;
+  left: 120px;
+  top: 15px;
+}
+
+.play1controls .playbtn.play,
+.play2controls .playbtn.play {
+  background: transparent url("./../images/play.png") no-repeat center scroll;
+  background-size: cover;
+}
+
+.play1controls .playbtn.pause,
+.play2controls .playbtn.pause {
+  background: transparent url("./../images/stop.png") no-repeat center scroll;
+  background-size: cover;
+}
+
+.play1controls .mute.open,
+.play2controls .mute.open {
+  background: transparent url("./../images/open.png") no-repeat center scroll;
+  background-size: 24px;
+}
+
+.play1controls .mute.close,
+.play2controls .mute.close {
+  background: transparent url("./../images/close.png") no-repeat center scroll;
+  background-size: 24px;
+}
+
+.play1controls .screen,
+.play2controls .screen {
+  background: transparent url("./../images/screen.png") no-repeat center scroll;
+  background-size: 24px;
+}
+
+.transcript-btn {
+  background: #c183b1;
+  color: white;
+  padding: 1rem;
+  font-size: 1em;
+  margin: 1rem;
+}
+
+.transcript {
+  margin: 1rem;
+  line-height: 1.5em;
+}
+
+.transcript p {
+  margin-bottom: 1em;
+}
+
+
+
+.subTitle{
+    position: absolute   !important;
+    right: 150px   !important;
+    top: 15px   !important;
+    width: 30px   !important;
+    height: 30px   !important;
+    display: inline-block   !important;
+	    background: transparent url(./../images/subtiles.png) no-repeat center scroll;
+    background-size: 24px;
+}
