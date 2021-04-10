@@ -7,6 +7,10 @@
 we will be using three pieces of media from your Roku Flashback project - 1 audio file, 2 video
 files (one movie, one tv show) - and making them accessible for everyone.
 
+There is my development and design files, you can click it to preview
+[Google Doc](https://docs.google.com/document/d/1FSxBCMwwndjnsqsn54iIayTy2rVrc1t-OX6XrIZ-j5g/edit?usp=sharing).
+
+
 
 ## Installation
 Just clone the repo anywhere on your computer and create branches!
